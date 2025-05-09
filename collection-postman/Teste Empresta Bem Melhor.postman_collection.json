@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "ca41d701-78bd-4689-8e05-af8619be8678",
+		"name": "Teste Empresta Bem Melhor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18250210"
+	},
+	"item": [
+		{
+			"name": "Simular crédito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor_emprestimo\": 12345.97,\n    \"instituicoes\": [\"PAN\",\"BMG\"],\n    \"convenios\": [\"INSS\",\"FEDERAL\"],\n    \"parcela\": 48\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/simular-credito",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"simular-credito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar instituicoes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{base_url}}/listar-instituicoes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"listar-instituicoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar convênios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{base_url}}/listar-convenios",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"listar-convenios"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Define a function that takes parameters",
+					"function generateToken() {",
+					"    return Date.now() + '_' + Math.random().toString(36).substr(2, 9);",
+					"",
+					"}",
+					"",
+					"// Call the function and assign the result to a variable",
+					"var tkn = generateToken();",
+					"pm.variables.set(\"uniqid\", tkn);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
