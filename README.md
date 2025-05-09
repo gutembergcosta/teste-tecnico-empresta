@@ -11,7 +11,7 @@
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/sua-api.git
+git https://github.com/gutembergcosta/teste-tecnico-empresta.git
 cd sua-api
 ```
 
