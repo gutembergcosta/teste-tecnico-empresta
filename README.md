@@ -11,8 +11,8 @@
 ### 1. Clone o repositório
 
 ```bash
-git https://github.com/gutembergcosta/teste-tecnico-empresta.git
-cd sua-api
+git clone https://github.com/gutembergcosta/teste-tecnico-empresta.git
+cd teste-tecnico-empresta
 ```
 
 ### 2. Instale as dependências
